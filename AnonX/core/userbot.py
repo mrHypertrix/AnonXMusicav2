@@ -1,26 +1,22 @@
 import sys
-
 from pyrogram import Client
-
 import config
-
 from ..logging import LOGGER
 
 assistants = []
 assistantids = []
 
-
 class Userbot(Client):
     def __init__(self):
         self.one = Client(
-           "AnonXString1",
+            "AnonXString1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_name=str(config.STRING1),
             no_updates=True,
         )
         self.two = Client(
-           "AnonXString2",
+            "AnonXString2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_name=str(config.STRING2),
@@ -49,7 +45,7 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Gettings Assistants Info...")
+        LOGGER(__name__).info(f"Getting Assistants Info...")
         if config.STRING1:
             await self.one.start()
             try:
@@ -184,4 +180,6 @@ class Userbot(Client):
                 sys.exit()
             LOGGER(__name__).info(
                 f"Assistant Five Started as {self.five.name}"
-        )
+            )
+
+# Add the closing parenthesis for the class definition
