@@ -6,41 +6,41 @@ from ..logging import LOGGER
 assistants = []
 assistantids = []
 
-class Userbot(Client):
+class Userbot:
     def __init__(self):
         self.one = Client(
             "AnonXString1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING1),
+            workdir=str(config.STRING1),  # Use 'workdir' instead of 'session_name'
             no_updates=True,
         )
         self.two = Client(
             "AnonXString2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING2),
+            workdir=str(config.STRING2),
             no_updates=True,
         )
         self.three = Client(
             "AnonXString3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING3),
+            workdir=str(config.STRING3),
             no_updates=True,
         )
         self.four = Client(
             "AnonXString4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING4),
+            workdir=str(config.STRING4),
             no_updates=True,
         )
         self.five = Client(
             "AnonXString5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING5),
+            workdir=str(config.STRING5),
             no_updates=True,
         )
 
@@ -67,12 +67,13 @@ class Userbot(Client):
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
                 )
                 sys.exit()
             LOGGER(__name__).info(
                 f"Assistant Started as {self.one.name}"
             )
+
         if config.STRING2:
             await self.two.start()
             try:
@@ -94,12 +95,13 @@ class Userbot(Client):
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 2 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"Assistant Account 2 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
                 )
                 sys.exit()
             LOGGER(__name__).info(
                 f"Assistant Two Started as {self.two.name}"
             )
+
         if config.STRING3:
             await self.three.start()
             try:
@@ -121,12 +123,13 @@ class Userbot(Client):
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 3 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"Assistant Account 3 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
                 )
                 sys.exit()
             LOGGER(__name__).info(
                 f"Assistant Three Started as {self.three.name}"
             )
+
         if config.STRING4:
             await self.four.start()
             try:
@@ -148,12 +151,13 @@ class Userbot(Client):
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 4 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"Assistant Account 4 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
                 )
                 sys.exit()
             LOGGER(__name__).info(
                 f"Assistant Four Started as {self.four.name}"
             )
+
         if config.STRING5:
             await self.five.start()
             try:
@@ -175,7 +179,7 @@ class Userbot(Client):
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 5 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"Assistant Account 5 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
                 )
                 sys.exit()
             LOGGER(__name__).info(
@@ -183,3 +187,8 @@ class Userbot(Client):
             )
 
 # Add the closing parenthesis for the class definition
+
+# Create an instance of the Userbot and start it
+if __name__ == "__main__":
+    userbot = Userbot()
+    userbot.start()
