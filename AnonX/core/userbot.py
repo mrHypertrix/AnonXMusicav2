@@ -13,30 +13,35 @@ assistantids = []
 class Userbot(Client):
     def __init__(self):
         self.one = Client(
+           "AnonXString1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_name=str(config.STRING1),
             no_updates=True,
         )
         self.two = Client(
+           "AnonXString2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_name=str(config.STRING2),
             no_updates=True,
         )
         self.three = Client(
+            "AnonXString3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_name=str(config.STRING3),
             no_updates=True,
         )
         self.four = Client(
+            "AnonXString4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_name=str(config.STRING4),
             no_updates=True,
         )
         self.five = Client(
+            "AnonXString5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_name=str(config.STRING5),
@@ -179,4 +184,4 @@ class Userbot(Client):
                 sys.exit()
             LOGGER(__name__).info(
                 f"Assistant Five Started as {self.five.name}"
-            )
+        )
